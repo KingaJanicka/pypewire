@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 
-import sys
-import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+import ctypes
+import pathlib
 
-import sample
+if __name__ == "__main__":
+    # TODO: make cross-platform
+    libname = "/usr/lib/aarch64-linux-gnu/libpipewire-0.3.so.0"
+    c_lib = ctypes.CDLL(libname)
+    print(c_lib)
